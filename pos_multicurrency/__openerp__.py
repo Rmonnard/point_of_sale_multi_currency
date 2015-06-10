@@ -13,7 +13,7 @@ point of sale module.
 	"depends" : ["point_of_sale"],
 	"update_xml":["views/pos_multicurrency.xml"],
 	"demo_xml" : [],
-	"data" : [],
+	"data" : ["pos_multicurrency_view.xml"],
 	"installable" : True,
 	"active" : False,
 }
