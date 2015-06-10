@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+
+
+    <record model="ir.ui.view" id="view_pos_multicurrency_currencies_form">
+        <field name="name">pos_multicurrency.currenciesform</field>
+        <field name="model">pos_multicurrency.currencies</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Displayed currencies">
+              <group>
+                <field name="name"/>
+                <field name="ticket_label" />
+                <field name="currency_id"/>
+                <field name="rate" />
+                <field name="active" />
+              </group>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_pos_multicurrency_currencies_tree">
+        <field name="name">pos_multicurrency.currencies.tree</field>
+        <field name="model">pos_multicurrency.currencies</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Displayed currencies">
+                <field name="name"/>
+                <field name="ticket_label" />
+                <field name="currency_id"/>
+                <field name="rate" />
+                <field name="active" />
+            </tree>
+        </field>
+    </record>
+
+		<record id="action_pos_multicurrency_settings" model="ir.actions.act_window">
+        <field name="name">Displayed currencies</field>
+        <field name="res_model">pos_multicurrency.currencies</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="view_id" ref="view_pos_multicurrency_currencies_tree"/>
+    </record>
+
+
+		<menuitem name="Displayed currencies" sequence="29" id="multicurrency_settings" action="action_pos_multicurrency_settings" parent="point_of_sale.menu_point_config_product"/>
+
+	</data>
+</openerp>
