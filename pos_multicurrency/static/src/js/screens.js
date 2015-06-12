@@ -9,6 +9,7 @@ function openerp_pos_screens_custom(instance, module){ //module is instance.poin
         var decimals = 2;//currency.decimals;
 
         if (typeof amount === 'number') {
+            amount = round_pr(amount, currency.rounding)
             amount = round_di(amount,decimals).toFixed(decimals);
         }
 
