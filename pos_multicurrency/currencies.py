@@ -25,6 +25,7 @@ class pos_multicurrency_currencies(orm.Model):
 				'rate': record.rate,
 				'symbol': record.currency_id.symbol,
 				'position': record.currency_id.position,
+				'rounding': record.currency_id.rounding,
 				'ticket_label': record.ticket_label
 			}]
 		return ret

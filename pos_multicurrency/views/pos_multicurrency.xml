@@ -5,6 +5,7 @@
 	<data>
 		<template id="assets_backend" name="point_of_sale assets" inherit_id="web.assets_backend">
 			<xpath expr="." position="inside">
+				<script type="text/javascript" src="/pos_multicurrency/static/src/js/models.js"></script>
 				<script type="text/javascript" src="/pos_multicurrency/static/src/js/screens.js"></script>
 				<script type="text/javascript" src="/pos_multicurrency/static/src/js/main.js"></script>
 			</xpath>

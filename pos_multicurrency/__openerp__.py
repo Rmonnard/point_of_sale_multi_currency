@@ -16,4 +16,5 @@ point of sale module.
 	"data" : ["pos_multicurrency_view.xml"],
 	"installable" : True,
 	"active" : False,
+	"qweb" : ["static/*/xml/*.xml"],
 }
