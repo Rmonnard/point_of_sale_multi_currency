@@ -99,9 +99,12 @@
                 <right><value><t t-esc='receipt.total_with_tax' /></value></right>
             </line>
 
+            <!-- Other currencies -->
+
+            <br/>
             <t t-foreach='receipt.otherCurrencies' t-as='line'>
                 <line>
-                    <left><t t-esc='line.label' /></left>
+                    <left>        <t t-esc='line.label' /></left>
                     <right><value><t t-esc='line.amount'/></value></right>
                 </line>
             </t>
