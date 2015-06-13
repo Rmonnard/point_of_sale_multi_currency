@@ -107,9 +107,10 @@
                     <left><pre>        <t t-esc='line.label' /></pre></left>
                     <right><value><t t-esc='line.amount'/></value></right>
                 </line>
+                <br/>
             </t>
 
-            <br/><br/>
+            <br/>
 
             <!-- Payment Lines -->
 
