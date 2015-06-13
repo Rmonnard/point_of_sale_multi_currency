@@ -104,7 +104,7 @@
             <br/>
             <t t-foreach='receipt.otherCurrencies' t-as='line'>
                 <line>
-                    <left>        <t t-esc='line.label' /></left>
+                    <left><pre>        <t t-esc='line.label' /></pre></left>
                     <right><value><t t-esc='line.amount'/></value></right>
                 </line>
             </t>
