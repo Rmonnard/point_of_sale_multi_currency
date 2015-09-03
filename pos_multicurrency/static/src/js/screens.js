@@ -22,6 +22,30 @@ function openerp_pos_screens_custom(instance, module){ //module is instance.poin
 
     module.PaymentScreenWidget = module.PaymentScreenWidget.extend({
         
+        show: function(){
+            var self = this;
+            this.add_action_button({
+                    label: 'Validate - no ticket',
+                    name: 'validation_no_ticket',
+                    icon: '/point_of_sale/static/src/img/icons/png48/validate.png',
+                    click: function(){
+                        self.validate_order_no_ticket();
+                    },
+                });
+
+            this._super();
+        },
+
+        validate_order_no_ticket: function(){
+            temp_next_screen = this.next_screen
+            this.next_screen = 'products'
+            temp_proxy_print = this.pos.config.iface_print_via_proxy;
+            this.validate_order();
+            this.pos.get('selectedOrder').destroy();
+            this.pos.config.iface_print_via_proxy = temp_proxy_print;
+            this.next_screen = temp_next_screen;
+        },
+
         update_payment_summary: function() {
             var currentOrder = this.pos.get('selectedOrder');
             var paidTotal = currentOrder.getPaidTotal();
